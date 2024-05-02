@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}Maestso{% endblock %}</title>
+</head>
+<body>
+    <div class="main-box">
+        <header>
+            <nav class="nav-top">
+                <a href="{{ url_for('home') }}">
+                    <img src="/static/images/logo.png" class="logo">
+                </a>
+                {% if session.get('user_email') %}
+                    <div class="user_login" >{{ session['user_email'] }} | <a href="{{ url_for('logout_action') }}">Logout</a></div>
+                {% else %}
+                    <img src="/static/images/user-icon.png" class="user" id="userIcon" style="cursor:pointer;">
+                {% endif %}
+            </nav>
+            <nav class="nav-bottom">
+                <ul>
+                    <li><a style="cursor: pointer" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a style="cursor: pointer"href="{{ url_for('ourTeam') }}">Our Team</a></li>
+                    <li><a style="cursor: pointer" href="{{ url_for('edu') }}">Education</a></li>
+                    <li><a style="cursor: pointer" href="{{ url_for('appointment') }}">Appointment</a></li>
+                    <li><a style="cursor: pointer" href="{{ url_for('contact') }}">Contact Us</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+
+        {% block body %}
+       
+        <div class="box-body">
+           
+        </div>
+        {% endblock %}
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson | safe }};
+    
+        $(document).ready(function() {
+        var userIcon = document.getElementById('userIcon');
+        if (userIcon) {
+            userIcon.onclick = function() {
+                window.location.href = "{{ url_for('login_page') }}";
+            };
+        }
+    });
+
+</script>
+
+</body>
+</html>

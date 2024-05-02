@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Maestro{% endblock %}
+
+{% block body %}
+<div class="box-body">
+        <div>
+            <h1>Team Testimonials</h1>
+        </div>
+</div>
+
+    <div class="testimonials">
+            <div class="testimonial-item">
+                <img src="/static/images/person1.jpg" alt="Person 1">
+                <p class="testimonial-text">"Being part of Maestro has allowed me to explore innovative solutions in financial technology. Our commitment to providing accessible financial advice drives everything we do."</p>
+                <p class="testimonial-name">- Komal Patil, Co-Founder</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="/static/images/person2.jpg" alt="Person 2">
+                <p class="testimonial-text">"I'm thrilled to work with a team that values creativity and user-centric design. Developing the Maestro Assist platform has been a rewarding challenge that pushes the envelope in tech and finance."</p>
+                <p class="testimonial-name">- Priyanshi Deliwala, Lead Developer</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="/static/images/person3.jpg" alt="Person 3">
+                <p class="testimonial-text">"Our goal was always clear: to make financial advice accessible and understandable. Seeing our users benefit from Maestro Assist makes all the hard work worth it."</p>
+                <p class="testimonial-name">- Shriya Sharma, Product Manager</p>
+            </div>
+        </div>
+{% include 'chat_support.html' %}
+{% endblock %}

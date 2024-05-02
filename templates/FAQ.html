@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Maestro{% endblock %}
+
+{% block body %}
+
+<div class="box-body">
+    <div class="left-box">
+        <h1>FAQ</h1>
+        <div class='faq'>
+            <input id='faq-a' type='checkbox'>
+            <label for='faq-a'>
+              <p class="faq-heading">How can I minimize taxes on my investments?</p>
+              <div class='faq-arrow'></div>
+                <p class="faq-text">Tax efficiency is a critical aspect of investment planning. Strategies such as utilizing tax-advantaged accounts like IRAs and 401(k)s, harvesting tax losses, and investing in tax-efficient funds can help minimize your tax burden. Additionally, strategic asset location, where tax-efficient investments are held in taxable accounts and tax-inefficient investments in tax-advantaged accounts, can further optimize tax outcomes.</p>
+            </label>
+            <input id='faq-b' type='checkbox'>
+            <label for='faq-b'>
+              <p class="faq-heading">What is the potential impact of economic and market fluctuations on my portfolio?</p>
+              <div class='faq-arrow'></div>
+                <p class="faq-text">Economic and market fluctuations can have both short-term and long-term impacts on your investment portfolio. A diversified portfolio tailored to your risk tolerance and investment objectives can help mitigate the impact of market volatility. Regular portfolio reviews with your financial advisor can ensure your investments remain aligned with your goals and risk tolerance, and adjustments can be made as needed to adapt to changing market conditions.</p>
+            </label>
+            <input id='faq-c' type='checkbox'>
+            <label for='faq-c'>
+              <p class="faq-heading">How can I minimize taxes on my investments?</p>
+              <div class='faq-arrow'></div>
+                <p class="faq-text">Tax efficiency is a critical aspect of investment planning. Strategies such as utilizing tax-advantaged accounts like IRAs and 401(k)s, harvesting tax losses, and investing in tax-efficient funds can help minimize your tax burden. Additionally, strategic asset location, where tax-efficient investments are held in taxable accounts and tax-inefficient investments in tax-advantaged accounts, can further optimize tax outcomes.</p>
+            </label>
+            <input id='faq-d' type='checkbox'>
+            <label for='faq-d'>
+              <p class="faq-heading">What should I consider when deciding whether to rent or buy a home?</p>
+              <div class='faq-arrow'></div>
+                <p class="faq-text">The decision to rent or buy a home depends on various factors, including your financial situation, lifestyle preferences, and long-term goals. Considerations include the cost of homeownership (mortgage payments, property taxes, maintenance), potential for home price appreciation, flexibility of renting versus the stability of homeownership, and the opportunity cost of tying up funds in a down payment. A financial advisor can help you evaluate the financial implications and make an informed decision based on your individual circumstances. </p>
+            </label>
+            <input id='faq-e' type='checkbox'>
+            <label for='faq-e'>
+              <p class="faq-heading">How can I balance paying off debt with saving for other financial goals?</p>
+              <div class='faq-arrow'></div>
+                <p class="faq-text">Balancing debt repayment with saving for other financial goals requires prioritizing based on interest rates, terms, and your overall financial situation. High-interest debt should generally be prioritized for repayment to minimize interest costs, while still allocating funds towards savings goals such as emergency funds, retirement savings, and other financial objectives. A financial advisor can help you develop a personalized plan to efficiently manage debt repayment while making progress towards your other financial goals.</p>
+            </label>
+             </div>
+    </div>
+    <div class="right-box">
+        <img  src="/static/images/faq.jpg">
+    </div>
+</div>
+{% include 'chat_support.html' %}
+{% endblock %}

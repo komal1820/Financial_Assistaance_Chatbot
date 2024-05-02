@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Maestro{% endblock %}
+
+{% block body %}
+<div class="box-body">
+    <div class="left-box">
+        <h1>Get in Touch</h1>
+        <h3>24 / 7 Support</h3>
+        <p>Have questions or need further assistance? Our team is here to help you.</p>
+    </div>
+    <div class="right-box">
+        {% if message %}
+        <div class="overlay"></div>
+        <div class="message-container">
+            <button class="close-btn">&times;</button>
+            {% if message == 'success' %}
+            <div class="alert alert-success">Your inquiry has been submitted successfully. Thank you!</div>
+            {% elif message == 'error' %}
+            <div class="alert alert-danger">Error submitting your inquiry. Please try again.</div>
+            {% else %}
+            <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+        </div>
+        {% endif %}
+        <form method="post" action="/submit_inquiry">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var closeButton = document.querySelector('.close-btn');
+        if (closeButton) {
+            closeButton.addEventListener('click', function() {
+                document.querySelector('.overlay').style.display = 'none';
+                document.querySelector('.message-container').style.display = 'none';
+            });
+        }
+    
+        var overlay = document.querySelector('.overlay');
+        if (overlay) {
+            overlay.addEventListener('click', function() {
+                this.style.display = 'none';
+                document.querySelector('.message-container').style.display = 'none';
+            });
+        }
+    });
+    </script>
+    
+{% include 'chat_support.html' %}   
+<!-- Include your chatbox container here if necessary -->
+{% endblock %}

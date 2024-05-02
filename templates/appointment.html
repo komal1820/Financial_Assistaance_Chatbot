@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Book Appointment - Maestro{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        h2 {
+            text-align: center;
+            color: #00416a;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            color: #00416a;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="time"], input[type="tel"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #5c67f2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .flashes {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 4px;
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Appointment</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flashes {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="post" action="{{ url_for('submit_appointment') }}">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required pattern="[^@]+@[^@]+\.[^@]+" title="Invalid email format">
+    
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required min="{{ tomorrow }}">
+    
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required min="10:00" max="18:00">
+    
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required pattern="[1-9][0-9]{9}" title="Must be 10 digits and not start with 0">
+    
+            <label for="type">Appointment Type:</label>
+            <select id="type" name="type">
+                <option value="virtual">Virtual</option>
+                <option value="in-person">In-person</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

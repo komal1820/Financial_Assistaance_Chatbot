@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Maestro{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Education Resources</title>
+<style>
+    main {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto; /* Add this line */
+    margin-top: 100px;
+}
+
+    section:hover {
+        transform: translateY(-5px);
+    }
+        /* Education page styles */
+    h1 {
+        margin-top: 70px; 
+        margin-left: 450px;
+
+
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Financial Education Resources</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Saving for Student Loans</h2>
+            <a href="https://youtu.be/FyLRxU5mJPM?si=Vkl9bkYZGR6ZOu0W"><img src="/static/images/background1.jpg" alt="Image 1"></a>
+        </section>
+
+        <section>
+            <h2>Taxes for Students</h2>
+            <a href="https://youtu.be/Iw9r0TSeXIA?si=I6WL3zp8JkmwNw8j"><img src="/static/images/background2.png" alt="Image 2"></a>
+        </section>
+
+        <section>
+            <h2>Credit Cards for Students</h2>
+            <a href="https://youtu.be/BZiXWXCUvbw?si=bpbcCaU04b3CYkkK"><img src="/static/images/background5.jpeg" alt="Image 3"></a>
+        </section>
+    </main>
+</body>
+</html>
+{% include 'chat_support.html' %}
+{% endblock %}

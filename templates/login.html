@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Maestro{% endblock %}
+
+{% block body %}
+<div class="box-body">
+    <div class="form-box">
+    <div id="modalOverlay">
+        <div id="modalContent">
+            <span class="close" onclick="closeModal()" ">&times;</span>
+            <h2>Login</h2>
+             <!-- Error Message Display -->
+             {% if request.args.get('message') %}
+             <div style="color: red; text-align: center;">
+                 {{ request.args.get('message') }}
+             </div>
+             {% endif %}
+            <form action="/login_action" method="post">
+                <input type="email" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="{{ url_for('signup_page') }}">Sign up</a></p>
+            <p><a href="#" onclick="showForgotPasswordForm()">Forgot Password?</a></p>
+        </div>
+        
+        <!-- Forgot Password Form (Initially Hidden) -->
+        <div id="forgotPasswordForm" style="display: none;">
+            <h2>Forgot Password</h2>
+            <form action="/reset_password_action" method="post">
+                <input type="email" placeholder="Enter your email" name="email" required>
+                <button type="submit">Reset Password</button>
+            </form>
+            <!-- Back Button to Go Back to Login -->
+            <button onclick="showLoginForm()">Back to Login</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    function showForgotPasswordForm() {
+        // Hide login form
+        document.getElementById("modalContent").style.display = "none";
+        // Show forgot password form
+        document.getElementById("forgotPasswordForm").style.display = "block";
+    }
+    
+    function showLoginForm() {
+        // Hide forgot password form
+        document.getElementById("forgotPasswordForm").style.display = "none";
+        // Show login form
+        document.getElementById("modalContent").style.display = "block";
+    }
+    function closeModal() {
+        // Redirect to home page
+        window.location.href = "{{ url_for('home') }}";
+    }
+</script>
+{% include 'chat_support.html' %}
+{% endblock %}

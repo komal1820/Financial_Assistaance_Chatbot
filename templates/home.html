@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Maestro{% endblock %}
+
+{% block body %}
+<div class="box-body">
+    <div class="left-box">
+        <h1>Financial Assistance Chatbot</h1>
+        <h3>24 / 7 Customer Assistance</h3>
+        <p>We provide you with the best financial<br>advice designed to your needs.</p>
+        <p>
+            <button onclick="window.location.href='/faq'" class="faq-button">FAQs</button>
+         </p>
+    </div>
+    <div class="right-box">
+        <img src="/static/images/background-image.jpg">
+    </div>
+</div>
+{% include 'chat_support.html' %}
+{% endblock %}

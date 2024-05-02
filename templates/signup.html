@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Maestro{% endblock %}
+
+{% block body %}
+<div class="box-body">
+    <div class="form-box">
+    <div id="modalOverlay">
+        <div class="modalContent">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Sign Up</h2>
+            {% if error %}
+            <div style="color: red;">{{ error }}</div>
+            {% endif %}
+            <form action="/signup_action" method="post"> 
+                <input type="email" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="password" id="password" required>
+                <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    function showForgotPasswordForm() {
+        // Hide login form
+        document.getElementById("modalContent").style.display = "none";
+        // Show forgot password form
+        document.getElementById("forgotPasswordForm").style.display = "block";
+    }
+    
+    function showLoginForm() {
+        // Hide forgot password form
+        document.getElementById("forgotPasswordForm").style.display = "none";
+        // Show login form
+        document.getElementById("modalContent").style.display = "block";
+    }
+    function closeModal() {
+        // Redirect to home page
+        window.location.href = "{{ url_for('home') }}";
+    }
+</script>
+{% include 'chat_support.html' %}
+{% endblock %}
