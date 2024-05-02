@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Maestro{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Education Resources</title>
+<style>
+    main {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto; /* Add this line */
+    margin-top: 100px;
+}
+
+    section:hover {
+        transform: translateY(-5px);
+    }
+        /* Education page styles */
+    h1 {
+        margin-top: 70px; 
+        margin-left: 450px;
+
+
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Financial Education Resources</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Saving for Student Loans</h2>
+            <a href="video1_link_here"><img src="/static/images/background1.jpg" alt="Image 1"></a>
+        </section>
+
+        <section>
+            <h2>Taxes for Students</h2>
+            <a href="video2_link_here"><img src="/static/images/background2.png" alt="Image 2"></a>
+        </section>
+
+        <section>
+            <h2>Credit Cards for Students</h2>
+            <a href="video3_link_here"><img src="/static/images/background5.jpeg" alt="Image 3"></a>
+        </section>
+    </main>
+</body>
+</html>
+
+{% endblock %}

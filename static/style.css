@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanuman&family=Roboto&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanuman&family=Hind+Guntur&family=Roboto&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanuman&family=Hind+Guntur&family=Hind+Madurai&family=Roboto&family=Ubuntu&display=swap');
+
+
+
+body{
+    background-color: #00416a ;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/static/images/th.jpeg');
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.main-box{
+    height: 800px; /* Example fixed height */
+    overflow: auto; /* Enables scrolling within the container if content exceeds the height */
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    display: inline-block;
+    width: 97%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.541);
+}
+
+.nav-top{
+    padding: 10px 50px 10px 20px;
+}
+
+.nav-top .logo {
+    width: 120px; /* Increase the width */
+    height: 120px; /* Increase the height to maintain a square shape */
+    padding: 20px; /* Increase padding for spacing */
+    border-radius: 40%; /* Adjust the border-radius to crop the sides */
+    overflow: hidden; /* Clip any content that extends beyond the rounded corners */
+}
+.nav-top .user_login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto; /* Adjust based on content */
+    margin-left: auto; /* Pushes the container to the right */
+    height: 100%; /* Align vertically */
+}
+
+.nav-top .user{
+    float: right;
+    padding-top: 35px;
+    align-items: center;
+    height: auto;
+    width: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 110px; /* Increase the width */
+    height: 110px; /* Increase the height to maintain a square shape */
+    padding: 20px; /* Increase padding for spacing */
+    border-radius: 40%; /* Adjust the border-radius to crop the sides */
+    overflow: hidden; /* Clip any content that extends beyond the rounded corners */
+}
+
+.nav-bottom{
+    overflow: hidden;
+    padding: 5px;
+    width: 100%;
+    padding-right: 50px;
+    background-color: #00416a;
+    justify-content: space-between;
+}
+
+.nav-bottom ul{
+    float: right;
+    cursor: pointer;
+}
+
+.nav-bottom li a {
+    cursor: pointer; /* Explicitly ensure that cursor is pointer for these links */
+}
+.nav-bottom li{
+    display: inline;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #00416a;
+    font-family: 'Hanuman', serif;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-bottom a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer
+}
+
+.nav-bottom a:before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 0;
+    background: rgba(42, 67, 197, 1);
+    border-radius: 50px;
+    transition: width 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-bottom a:hover:before{
+    width: 30%;
+    cursor: pointer
+}
+
+.box-body{
+    display: flex;
+    padding: 20px;
+}
+
+.left-box{
+    width: 60%;
+    padding: 20px;
+}
+
+.left-box::before{
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 8%;
+    height: 45%;
+    width: 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+
+.left-box h1{
+    font-size: 30px;
+    padding: 40px;
+    color: rgba(13, 31, 128, 1);
+    font-family: 'Hanuman', serif;
+}
+
+.left-box h3{
+    font-size: 20px;
+    padding: 0px 40px 20px 40px;
+    color: #00416a;
+    font-family: 'Hind Guntur', sans-serif;
+}
+
+.left-box p{
+    font-size: 20px;
+    padding: 0px 40px 20px 40px;
+    font-family: 'Hind Guntur', sans-serif;
+    font-weight: 600;
+}
+
+.left-box .services{
+    width: 170px;
+    height: 50px;
+    margin: 0px 40px 20px 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px;
+    cursor: pointer;
+    background-color: #00416a;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.541);
+    font-family: 'Hind Madurai', sans-serif;
+    color: white;
+}
+
+.left-box .services:hover{
+    background-color: rgb(147, 165, 255);
+    color: black;
+    cursor: pointer;
+}
+
+.right-box{
+    width: 40%;
+    padding: 15px 50px 25px 0px;
+}
+
+.right-box img{
+    padding: 15px 15px 15px 0px;
+    width: 100%;
+    height: auto;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top, ensuring it's above other content */
+    right: 20px; /* Align to the right side, near the user icon */
+    top: 120px; /* Position it below the user icon, adjust based on your header's actual height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #fefefe; /* Light background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Increased padding for inside modal content */
+    width: 25%;
+    height: auto;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+    .modal {
+        right: 10px; /* Less margin on smaller screens */
+        top: 80px; /* Adjust positioning for smaller headers */
+    }
+}
+
+/* Spacing and styling adjustments for form elements within the modal */
+#loginModal form label, #loginModal form input, #loginModal form button {
+    margin-top: 20px; /* Increase space above each element */
+    margin-bottom: 20px; /* Increase space below each element */
+    display: block; /* Ensures that each element takes up its own line */
+}
+
+#loginModal form input, #loginModal form button {
+    padding: 15px; /* Generous padding for ease of interaction */
+    width: calc(100% - 30px); /* Adjust width to accommodate padding */
+    box-sizing: border-box; /* Ensures padding does not affect overall width */
+}
+
+#loginModal form button {
+    margin-top: 30px; /* Additional space above the button for clear separation */
+    background-color: #00416a; /* Deep blue background */
+    color: white; /* White text for contrast */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Slightly rounded corners for a modern look */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#loginModal form button:hover {
+    background-color: #0066cc; /* Lighter blue on hover for interactivity */
+}
+
+.close:hover,
+.close:focus {
+    color: #0066cc; /* Lighter blue for the close button hover and focus */
+    cursor: pointer;
+}
+
+/* Maintain styling for other interactive elements */
+form button, .left-box .services, .nav-bottom a:hover, .nav-bottom a:focus {
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    text-decoration: underline; /* Underline to indicate interactivity */
+}
+/* Add this CSS to your style.css file or within a <style> tag in about.html */
+
+
+/* Testimonials specific styles */
+.testimonials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line as needed */
+    gap:150px; /* Space between each testimonial item */
+    padding: 20px 0; /* Vertical padding */
+}
+
+.testimonial-item {
+    flex: 1; /* Allows each item to grow */
+    min-width: 250px; /* Minimum width before wrapping */
+    max-width: 300px; /* Maximum width of each testimonial */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    text-align: center; /* Center the text */
+}
+
+.testimonial-item img {
+    width: 300px; /* Fixed width for images */
+    height: 300px; /* Fixed height for images */
+    border-radius: 70%; /* Circular images */
+    object-fit: cover; /* Ensure images cover their frame */
+    margin-bottom: 10px; /* Space between the image and the text */
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; 
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;  
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+}
+
+form textarea {
+    height: 150px; 
+    resize: vertical;  
+}
+
+form input[type="submit"] {
+    background-color: #00416a; 
+    color: white;  
+    padding: 10px 20px;  
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+form input[type="submit"]:hover {
+    background-color: #005f8f; 
+}
+
+
+@media (max-width: 768px) {
+    .left-box, .right-box {
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
+
+.faq-button {
+    font-size: 20px;  
+    color: white;  
+    padding: 15px 25px;  
+    border: 2px solid transparent; 
+    cursor: pointer;  
+    border-radius: 8px;  
+    background-color: #00416a; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.faq-button:hover, .faq-button:focus {
+    background-color: #005a8d; 
+    transform: scale(1.05); 
+    outline: none; 
+}
+
+.modal-content {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content div {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Add this CSS to your style.css file or within a <style> tag in base.html */
+#modalOverlay {
+    position: fixed;
+    top: 50%; /* Position the modal vertically at 50% from the top */
+    left: 50%; /* Position the modal horizontally at 50% from the left */
+    transform: translate(-50%, -50%); /* Center the modal */
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-box label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-box input[type="email"],
+.form-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00416a; /* Button color */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-box button:hover {
+    background-color: #00416a; /* Darker color on hover */
+}
+/* Add space between the buttons in the Forgot Password section */
+#forgotPasswordForm button {
+    margin-top: 10px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent black */
+    z-index: 9; /* Below the message but above other content */
+}
+
+.message-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    z-index: 10; /* Above the overlay */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: white; /* Ensure readability on top of the overlay */
+}
+
+.alert {
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.alert-success {background-color: #00416a;}
+.alert-danger {background-color: #f44336;}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    border: none;
+    background-color: transparent;
+    color: #aaa;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #777;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+@import url(https://fonts.googleapis.com/css?family=Open Sans);
+
+.faq-heading {
+  font-family: Lato;   
+  font-weight: 400;
+  font-size: 19px;
+   -webkit-transition: text-indent 0.2s;
+  text-indent: 20px;
+  color: #333;
+}
+
+.faq-text {
+  font-family: Open Sans;   
+  font-weight: 400;
+  color: #919191;
+  width:95%;
+  padding-left:20px;
+  margin-bottom:30px;
+}
+
+.faq {
+  width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid #E1E1E1;
+}
+.faq label {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 66px;
+  padding-top:1px;
+ 
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.faq input[type="checkbox"] {
+  display: none;
+}
+
+.faq .faq-arrow {
+  width: 5px;
+  height: 5px;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-top: 2px solid rgba(0, 0, 0, 0.33);
+  border-right: 2px solid rgba(0, 0, 0, 0.33);
+  float: right;
+  position: relative;
+  top: -30px;
+  right: 27px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+ .faq input[type="checkbox"]:checked + label > .faq-arrow {
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+ .faq input[type="checkbox"]:checked + label {
+  display: block;
+  background: rgba(255,255,255,255) !important;
+  color: #4f7351;
+  height: 325px;
+  transition: height 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+ .faq input[type='checkbox']:not(:checked) + label {
+  display: block;
+  transition: height 0.8s;
+  height: 60px;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
